@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin-left: 10px
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to this simple mailing service</h1>
+    <br>
+    <form action="sendMail/" method="post">
+        {% csrf_token %}
+<!--        to handle Cross Site Request Forgeries in forms where the method is POST.-->
+        <label for="sender">Sender Email</label>
+        <input id="sender" name="sender" placeholder="Sender">
+        <label for="password">Sender Password</label>
+        <input type="password" id="password" name="password" placeholder="password">
+        <br><br>
+         <label for="receiver">Receiver Email</label>
+        <input id="receiver" name="receiver" placeholder="receiver">
+        <br><br>
+        <input id="subject" name="subject" placeholder="subject">
+        <br>
+        <textarea name="content" placeholder="Mail content" style="width:75%; height:300px; padding:20px;"></textarea>
+        <br><br>
+        <input type="submit" value="Send">
+
+    </form>
+
+
+</body>
+</html>
